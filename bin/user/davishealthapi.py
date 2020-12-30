@@ -212,7 +212,9 @@ def decode_historical_json(data):
     h_packet = dict()
     try:
         historical_data = data["sensors"]
-        for i in range(7):
+        for i in range(2):
+            if i == 0:
+                continue
             if historical_data[i]["data"] and (
                 historical_data[i]["data_structure_type"] == 11
                 or historical_data[i]["data_structure_type"] == 13
@@ -235,8 +237,9 @@ def decode_historical_json(data):
                 h_packet["afc"] = values.get("afc")
                 h_packet["resynchs"] = values.get("resynchs")
                 h_packet["uvVolt"] = values.get("uv_volt_last")
-
-                break
+                
+                print("Hisotrical Data decoded from API call: %s" % h_packet)
+#                break
     except KeyError as error:
         logerr(
             "No valid historical  API data recieved. Double-check API "
