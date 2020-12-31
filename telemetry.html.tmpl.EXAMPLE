@@ -1,5 +1,8 @@
 ## Copyright 2017 Tom Keffer, Matthew Wall
 ## Distributed under terms of GPLv3.  See LICENSE.txt for your rights.
+
+## Modified to work with the DavisHealthAPI extension to display device info
+
 #errorCatcher Echo
 #encoding UTF-8
 
